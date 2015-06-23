@@ -296,7 +296,7 @@ app.directive('bestScore', [function () {
             }
             scope.$on('result', function (event, data) {
                 if (typeof(Storage) != "undefined") {
-                    if (!localStorage.getItem("bestScore") || (data > localStorage.getItem("bestScore"))) {
+                    if (!localStorage.getItem("bestScore") || (parseFloat(data) > parseFloat(localStorage.getItem("bestScore")))) {
                         localStorage.setItem("bestScore", data);
                     }
                 }
